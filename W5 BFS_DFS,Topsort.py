@@ -197,4 +197,4 @@ def topological_sort(g):
     result = []
     g.search()
     obj_list = [i for i in g.graph.vertices.values()]
-    return sorted(obj_list, key = lambda x: x.f, reverse = True)    
+    return sorted(obj_list, key = lambda x: x.f, reverse = True)
