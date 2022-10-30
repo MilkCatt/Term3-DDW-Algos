@@ -5,3 +5,4 @@ int(), str()
 .split(), .join()
 iterating through dictionary
 .format
+Computation time stuff (include trees!)

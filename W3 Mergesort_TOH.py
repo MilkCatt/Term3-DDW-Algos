@@ -1,5 +1,9 @@
 input_array =[5, 2, 4, 7, 1, 3, 2, 6, 234, -34, 2,-44]
 
+'''Mergesort
+Uses recursion to continually split an array, compare, and merge arrays'''
+
+#Non recursive, takes 2 SORTED arrays (1 array split into 2) and has pointers going through both.
 
 def merge(array, p, q, r):
    left_array = array[p:q]
@@ -25,7 +29,8 @@ def merge(array, p, q, r):
       array[dest] = right_array[right_pointer]
       right_pointer += 1
       dest += 1
-            
+
+
 def mergesort_recursive(array, p, r):
    if r-p > 0:
       q = (p+r)//2 
@@ -33,11 +38,12 @@ def mergesort_recursive(array, p, r):
       mergesort_recursive(array, q+1, r)
       merge(array, p, q+1, r)
 
+
 def mergesort(array):
    p = 0
    r = len(array)-1
    mergesort_recursive(array, p, r)
-    
 
+   
 mergesort(input_array)
 print(input_array)
