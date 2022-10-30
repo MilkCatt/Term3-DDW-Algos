@@ -1,0 +1,7 @@
+Python Methods to include in Cheat Sheet 
+.sort
+sorted()
+int(), str()
+.split(), .join()
+iterating through dictionary
+.format
