@@ -13,18 +13,18 @@ Computation Time : O(n^2)'''
 def bubble_sort(ls):
    n = len(ls)
    swapped = True
-   while swapped == True: #Optimisation 1 (Outer Loop)
+   while swapped == True: # Optimisation 1 (Outer Loop)
       swapped = False
       new_n = 0 
-      for inner_index in range(1,n): #Inner Loop
+      for inner_index in range(1,n): # Inner Loop
          first_number = ls[inner_index-1]
          second_number = ls[inner_index]
-         if first_number > second_number: #Comparison, followed by swap
+         if first_number > second_number: # Comparison, followed by swap
             ls[inner_index-1] = second_number
             ls[inner_index] = first_number
             swapped = True
             new_n = inner_index
-      n = new_n #Optimisation 2
+      n = new_n # Optimisation 2
    return(ls)
 
 

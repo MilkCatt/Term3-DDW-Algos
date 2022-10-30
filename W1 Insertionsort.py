@@ -13,10 +13,10 @@ Time Complexity: O(n^2)'''
 def insertion_sort(ls):
    n = len(ls)
    for outer_index in range(1,n):
-      inner_index = outer_index #Gets the item in question
-      temp_var = ls[inner_index] #Optimisation: stores it into a variable
-      while (inner_index>0) and (temp_var<ls[inner_index-1]): #Condition: item on left is smaller and we have not reached list start
-         ls[inner_index] = ls[inner_index-1] #Shifts the compared item to the right
+      inner_index = outer_index # Gets the item in question
+      temp_var = ls[inner_index] # Optimisation: stores it into a variable
+      while (inner_index>0) and (temp_var<ls[inner_index-1]): # Condition: item on left is smaller and we have not reached list start
+         ls[inner_index] = ls[inner_index-1] # Shifts the compared item to the right
          inner_index = inner_index-1
       ls[inner_index] = temp_var
    return(ls)

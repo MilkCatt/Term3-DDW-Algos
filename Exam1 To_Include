@@ -5,4 +5,5 @@ int(), str()
 .split(), .join()
 iterating through dictionary
 .format
+lamdba function
 Computation time stuff (include trees!)
