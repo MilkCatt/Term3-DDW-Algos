@@ -30,10 +30,8 @@ class Queue:
     def __init__(self):
         self.left_stack = Stack()
         self.right_stack = Stack()
-    
     def enqueue(self,item):
-        self.right_stack.push(item)
-    
+        self.right_stack.push(item)    
     def dequeue(self):
         if self.left_stack.size == 0:
             while self.right_stack.size > 0:
@@ -48,8 +46,7 @@ class Queue:
             return False
     @property
     def size(self):
-        return self.left_stack.size + self.right_stack.size
-    
+        return self.left_stack.size + self.right_stack.size    
     def peek(self):
         if self.left_stack.size == 0:
             while self.right_stack.size > 0:
