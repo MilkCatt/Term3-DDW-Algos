@@ -6,15 +6,15 @@ Computation time: O(nlogn)'''
 
 # Non recursive, takes 2 SORTED arrays (1 array split into 2) and has pointers going through both
 # Has a pointer going through each array, and stops 
-def merge(array, p, q, r):
+def merge(array, l, m, r):
    # Setting Array Parameters to be used (splitting the left and right arrays)
-   left_array = array[p:q]
-   right_array = array[q:r+1]
+   left_array = array[l:m]
+   right_array = array[m:r+1]
    left_len = len(left_array)
    right_len = len(right_array)
    left_pointer = 0
    right_pointer = 0
-   dest = p # Destination of the number to be added
+   dest = l # Destination of the number to be added
    # While the pointers have not reached the end of their respective arrays
    while (left_pointer < left_len) and (right_pointer < right_len):
       # Compare values at pointers, then setting dest value
@@ -36,18 +36,18 @@ def merge(array, p, q, r):
       dest += 1
 
 # Recursive function which continually splits and merges the function
-def mergesort_recursive(array, p, r):
-   if r-p > 0:
-      q = (p+r)//2 
-      mergesort_recursive(array, p, q)
-      mergesort_recursive(array, q+1, r)
-      merge(array, p, q+1, r)
+def mergesort_recursive(array, l, r):
+   if r-l > 0:
+      m = (l+r)//2 
+      mergesort_recursive(array, l, m)
+      mergesort_recursive(array, m+1, r)
+      merge(array, l, m+1, r)
 
 # Helper function which gets the left and right index of the array
 def mergesort(array):
-   p = 0
+   l = 0
    r = len(array)-1
-   mergesort_recursive(array, p, r)
+   mergesort_recursive(array, l, r)
 
    
 mergesort(input_array)

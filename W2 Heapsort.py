@@ -35,6 +35,7 @@ def min_heapify(array, index, size):
          array[min_child_i],array[current_i] = array[current_i],array[min_child_i]
          swapped = True
       current_i = min_child_i
+   return array
 
 # Creating a minimum heap from an array by calling min_heap from midway through the array (no child nodes)
 def build_min_heap(array):
@@ -47,14 +48,30 @@ def build_min_heap(array):
 def heapsort(array):
    result = [] # A separate array to store items
    build_min_heap(array) # Building a min heap for the array
-   heap_end_pos = len(array)-1 # Reducing the heap size as the algo builds
+   heap_end_pos = len(array)-1 
    while (heap_end_pos>=0):
       result.append(array[0])
       array[0],array[heap_end_pos] = array[heap_end_pos],array[0]
       array = array[0:heap_end_pos]
-      heap_end_pos -= 1
+      heap_end_pos -= 1 # Reducing the heap size as the algo builds
       min_heapify(array,0,len(array))
    return result
 
 
-print(heapsort(list1))
+# Heapsort algo (reversed) which builds in place)
+def heapsort2(array):
+   build_min_heap(array) # Building a min heap for the array
+   heap_end_pos = len(array)-1
+   while (heap_end_pos>0):
+      print(array)
+      array[0],array[heap_end_pos] = array[heap_end_pos],array[0]
+      print(array)
+      heap_end_pos -= 1 # Reducing the heap size as the algo builds
+      array[0:heap_end_pos] = min_heapify(array[0:heap_end_pos],0,len(array))
+      print(array)
+      print("-----------------")
+
+heapsort2(list1)
+print(list1)
+list1 = [16,14,10,8,7,8,3,2,4,1]
+print("original:",heapsort(list1))

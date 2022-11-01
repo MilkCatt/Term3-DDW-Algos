@@ -2,7 +2,7 @@
 
 class Stack:
     def __init__(self):
-        self.__items = []     
+        self.__items = []
     def push(self, item):
         self.__items.append(item)
     def pop(self):
@@ -55,14 +55,17 @@ class Queue:
         return self.left_stack.peek()
 
 
-'''EvaluatePostfix'''
+'''EvaluatePostfix
+Evaluates Postfix Notation. For example, the expression (1+2)*3 would be written as 1 2 + 3 *
+First store all of the items into a stack.
+Whilst there are still expressions, pop 2 numbers, perform the operation, then push the result beack into the queue'''
 
 class EvaluatePostfix:
-    operands = "0123456789" # class attribute, what we usually have is instance attributes
+    operands = "0123456789" # Class attribute, what we usually have is instance attributes
     operators = "+-*/"
     def __init__(self):
-        self.expression = [] # instance attribute
-        self.stack = Stack()
+        self.expression = [] # Stack of operators
+        self.stack = Stack() # Stack of numbers
     def input(self, item):
         self.expression.append(item)
     def evaluate(self):
