@@ -35,6 +35,10 @@ df.iloc[start_row:stop_row:step_row,:]
 df.loc[(df['Type 1'] == 'Grass') & (df['Type 2'] == 'Poison'),list_of_column_names]
 # getting unique entries from a categorical set of data
 np.unique(df['Type 1'])
+# iterating through data
+for i in range(0, df.shape[0]):
+        for j in range(0, df.shape[1]):
+            df.iloc[i,j]
 
 
 '''Series and Datframe functions'''
